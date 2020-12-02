@@ -1,1 +1,27 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<h1>Add a New Car Below:</h1>
+
+<form action="/cars/new" method="POST">
+  
+  <p>Year: <input type="text" name="year"></p>
+  <p>Make: <input type="text" name="make"></p>
+  <p>Model: <input type="text" name="model"></p>
+  <p>Color: <input type="text" name="color"></p>
+  <p>Name (optional): <input type="text" name="name"></p>
+  <p><label for="transmission">Transmission:</label>
+    <select name="cars" id="cars">
+        <option value="manual">Manual</option>
+        <option value="automatic">Automatic</option>
+    </select></p>
+  <p><label for="body_style">Body Style:</label>
+    <select name="cars" id="cars">
+        <option value="convertible">Convertible</option>
+        <option value="coupe">Coupe</option>
+        <option value="sedan">Sedan</option>
+        <option value="hatchback">Hatchback</option>
+        <option value="wagon">Wagon</option>
+        <option value="suv">SUV</option>
+        <option value="truck">Truck</option>
+        <option value="van">Van</option>
+    </select></p>
+  <input type="submit" value="Add Car">
+</form> 

@@ -6,4 +6,5 @@ end
 
 use CarsController
 run ApplicationController
+use UsersController
 
