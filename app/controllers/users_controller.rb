@@ -16,19 +16,7 @@ class UsersController < ApplicationController
     #end
   end
 
-  get '/sessions/login' do
-    erb :'/users/login'
-  end
-
-  post "sessions" do
-    @user = User.find_by(username: params[:username], password: params[:password])
-    if @user != nil && user.authenticate(session[:id])
-      session[:user_id] = @user.id
-      redirect '/account'
-    else
-      erb :'users/error'
-    end
-  end
+  
 
   get '/account' do
     @user = User.find(session[:user.id])

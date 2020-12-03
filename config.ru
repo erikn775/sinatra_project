@@ -7,5 +7,6 @@ end
 use UsersController
 use CarsController
 run ApplicationController
+use SessionsController
 
 
