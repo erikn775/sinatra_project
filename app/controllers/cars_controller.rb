@@ -10,6 +10,7 @@ class CarsController < ApplicationController
   end
 
   post "/cars" do
+    car = Car.create(params[:cars])
     redirect "/cars"
   end
 

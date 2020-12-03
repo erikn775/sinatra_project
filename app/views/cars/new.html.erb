@@ -1,19 +1,19 @@
 <h1>Add a New Car Below:</h1>
 
-<form action="/cars/new" method="POST">
+<form action="/cars" method="POST">
   
-  <p>Year: <input type="text" name="year"></p>
-  <p>Make: <input type="text" name="make"></p>
-  <p>Model: <input type="text" name="model"></p>
-  <p>Color: <input type="text" name="color"></p>
-  <p>Name (optional): <input type="text" name="name"></p>
+  <p>Year: <input type="text" name="cars[year]"></p>
+  <p>Make: <input type="text" name="cars[make]"></p>
+  <p>Model: <input type="text" name="cars[model]"></p>
+  <p>Color: <input type="text" name="cars[color]"></p>
+  <p>Name (optional): <input type="text" name="cars[name]"></p>
   <p><label for="transmission">Transmission:</label>
-    <select name="cars" id="cars">
+    <select name="cars[transmission]">
         <option value="manual">Manual</option>
         <option value="automatic">Automatic</option>
     </select></p>
   <p><label for="body_style">Body Style:</label>
-    <select name="cars" id="cars">
+    <select name="cars[body_style]">
         <option value="convertible">Convertible</option>
         <option value="coupe">Coupe</option>
         <option value="sedan">Sedan</option>
