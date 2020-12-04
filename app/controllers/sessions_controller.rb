@@ -4,13 +4,13 @@ class SessionsController < ApplicationController
     erb :'/sessions/login'
   end
 
-  post "sessions" do
-    @user = User.find_by(username: params[:username], password: params[:password])
+  post '/login' do
+    @user = User.find_by_username([:user][:username])
     if @user != nil && user.authenticate(session[:id])
       session[:user_id] = @user.id
       erb :'/users/account'
     else
-      erb :'users/error'
+      erb :'sessions/error'
     end
   end  
 end  

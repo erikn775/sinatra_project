@@ -1,5 +1,7 @@
 <h1>Sign Up Below:</h1>
 
+<%= @error %>
+
 <form action="/signup" method="POST">
   <p>Name: <input type="text" name="user[name]" required></p>
   <p>Username: <input type="text" name="user[username]" required></p>
