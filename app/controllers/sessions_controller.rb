@@ -5,12 +5,18 @@ class SessionsController < ApplicationController
   end
 
   post '/login' do
-    @user = User.find_by_username([:user][:username])
-    if @user != nil && user.authenticate(session[:id])
-      session[:user_id] = @user.id
+    user = User.find_by_username(params[:username])
+    if user != nil && user.authenticate(params[:password])
+      session[:user_id] = user.id
       erb :'/users/account'
     else
       erb :'sessions/error'
     end
   end  
+
+  delete '/logout' do
+    session.clear
+    redirect to '/login'
+  end
+
 end  

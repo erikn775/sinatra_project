@@ -24,8 +24,9 @@ class UsersController < ApplicationController
     erb :'/user/account'
   end
 
-  get '/users/:id/edit' do
-    erb :"/users/edit.html"
+  get '/account/:id/edit' do
+
+    erb :'users/edit'
   end
 
   patch '/users/:id' do
