@@ -12,11 +12,11 @@ class SessionsController < ApplicationController
     else
       erb :'sessions/error'
     end
-  end  
+  end 
 
-  delete '/logout' do
-    session.clear
-    redirect to '/login'
-  end
+  # delete '/logout' do
+  #   session.clear
+  #   redirect to '/login'
+  # end
 
 end  

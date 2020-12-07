@@ -20,26 +20,26 @@ class UsersController < ApplicationController
   
 
   get '/account' do
-    @user = User.find(session[:user.id])
+    user = User.find(session[:user_id])
     erb :'/user/account'
   end
 
-  get '/account/:id/edit' do
-
+  get '/account/edit' do
+    user = User.find(session[:user_id])
     erb :'users/edit'
   end
 
-  patch '/users/:id' do
-    redirect '/users/:id'
+  patch '/account/edit' do
+    user = User.find(session[:user.id])
+    binding.pry
+    user.update(params[:user])
+    redirect '/account'
   end
 
-  get 'error' do
-    erb :error
-  end
-
+  
   get '/logout' do
     session.clear
-    redirect '/'
+    redirect '/login'
   end
 
   delete '/users/:id/delete' do

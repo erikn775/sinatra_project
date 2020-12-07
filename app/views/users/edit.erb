@@ -1,9 +1,10 @@
-<h1>Edit <%= @user.name %></h1>
+<h1>Edit <%= current_user.username %></h1>
 
-<form method="POST" action="/users/<%= @user.id %>"
+<form method="POST" action="/account/edit"
     <input type="hidden" name="_method" value="PATCH">
-    <label>Name<label>
-        <input type="text" name="username"/>
-    </label>
-    <input type="submit" value="Edit User"
+    <p>Name: <input type="text" name="user[name]"></p>
+    <p>Username: <input type="text" name="user[username]"></p>
+    <p>Email: <input type="email" name="user[email]"></p>
+    <p>Password: <input type="password" name="user[password]"></p>
+    <input type="submit" value="Update Account"
 </form>

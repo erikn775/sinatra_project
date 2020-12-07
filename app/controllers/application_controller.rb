@@ -13,6 +13,10 @@ class ApplicationController < Sinatra::Base
     erb :welcome
   end
 
+  get '/error' do
+    erb :error
+  end
+
   helpers do
     #gives access inside of view files
     def logged_in?
