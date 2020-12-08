@@ -20,10 +20,17 @@
       <li class="active"><a href="/">Home</a></li>
       <li><a href="/cars">Community Page</a></li>
     </ul>
+    <% if logged_in? %>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/account"><span class="glyphicon glyphicon-user"></span> Account</a></li>
+        <li><a href="/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      </ul>
+    <% else %>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
+    <% end %>
   </div>
 </nav>
       <%= yield %>

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       user = User.new(params[:user])
       if user.save
         session[:user_id] = user.id
-        redirect '/login'
+        redirect '/account'
       else
         @error = user.errors.full_messages.join(" - ")
         erb :'users/signup'
@@ -20,8 +20,8 @@ class UsersController < ApplicationController
   
 
   get '/account' do
-    user = User.find(session[:user_id])
-    @user_car = Car.find_by(user_id: current_user)
+    @user = User.find(session[:user_id])
+    @user_car = Car.where(user_id: current_user)
     
     erb :'/users/account'
   end

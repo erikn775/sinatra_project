@@ -2,18 +2,28 @@
 
 <% if logged_in? %>
 
-    <h2>Welcome back <%= current_user.username %></h2>
+    <h2>Welcome back <%= current_user.name %></h2>
 
+    <h3>Car Collection</h3>
+
+    <% if @user_car == nil %>
+        <p> You dont currently have any cars added. Please add a car below</p>
+    <% else %>
+        <ul>
+            <% @user_car.each do |car| %>
+                <li><a href="/cars/<%=car.id%>"><%=car.year%> <%=car.make%> <%=car.model%></a></li>
+            <% end %>   
+        </ul>
+    <% end %>
     
-    <a href="/cars/<%=@user_car.id%>"><%=@user_car.year%> <%=@user_car.make%> <%=@user_car.model%></a></li>
-            
- 
+    <form method="GET" action="/cars/new" >
+    <input type="submit" value="Add a Car">
+    </form><br>
+
+    <form method="GET" action="/cars/account/edit" >
+    <input type="submit" value="Edit Account">
+    </form><br>
     
 <% end %>
 
 
-<p><a href='/cars/new'>Add a Car</a></p>
-
-<p><a href='/account/edit'>Edit Account</a></p>
-
-<p><a href='/logout'>Logout</a></p>

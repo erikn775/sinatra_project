@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
   end
 
   helpers do
-    #gives access inside of view files
+    
     def logged_in?
       !!session[:user_id]
     end

@@ -1,14 +1,16 @@
 
 <h1><%=@car.make%> <%=@car.model%></h1>
 
+<p>Owner: <%=@car.user.name.capitalize %>
 <p><%=@car.year%> <%= @car.make %> <%= @car.model %></p>
-<p><%= @car.name %></p>
-<p><%= @car.color %></p>
-<p><%= @car.body_style %></p>
-<p><%= @car.transmission %></p>
-<p><%=  %>
+<ul>
+    <li><%= @car.name %></p>
+    <li><%= @car.color %></p>
+    <li><%= @car.body_style %></p>
+    <li><%= @car.transmission %></p>
+</ul>
 
-<% if logged_in? %>
+<% if logged_in? == current_user %>
 
     <form method="GET" action="/cars/<%=@car.id%>/edit" >
     <input type="submit" value="Edit Car">
