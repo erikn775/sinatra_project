@@ -1,1 +1,21 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+
+<h1><%=@car.make%> <%=@car.model%></h1>
+
+<p><%=@car.year%> <%= @car.make %> <%= @car.model %></p>
+<p><%= @car.name %></p>
+<p><%= @car.color %></p>
+<p><%= @car.body_style %></p>
+<p><%= @car.transmission %></p>
+<p><%=  %>
+
+<% if logged_in? %>
+
+    <form method="GET" action="/cars/<%=@car.id%>/edit" >
+    <input type="submit" value="Edit Car">
+    </form><br>
+
+    <form method="POST" action="/cars/<%=@car.id%>" >
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete Car">
+    </form>
+<% end %>

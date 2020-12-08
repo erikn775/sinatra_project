@@ -4,13 +4,13 @@
 
     <h2>Welcome back <%= current_user.username %></h2>
 
-    <% current_user.cars %>
-
-    <%= car.year %>
-
-    <p>We are currently working on your account.</p>
-
+    
+    <a href="/cars/<%=@user_car.id%>"><%=@user_car.year%> <%=@user_car.make%> <%=@user_car.model%></a></li>
+            
+ 
+    
 <% end %>
+
 
 <p><a href='/cars/new'>Add a Car</a></p>
 

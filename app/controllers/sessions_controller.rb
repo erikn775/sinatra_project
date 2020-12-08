@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by_username(params[:username])
     if user != nil && user.authenticate(params[:password])
       session[:user_id] = user.id
-      erb :'/users/account'
+      redirect '/account'
     else
       erb :'sessions/error'
     end

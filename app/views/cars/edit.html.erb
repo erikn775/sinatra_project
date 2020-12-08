@@ -1,10 +1,16 @@
-<h1>Edit <%= @car.name %></h1>
+<h1>Edit <%=@car.make%> <%=@car.model%></h1>
 
-<form method="POST" action="/users/<%= @user.id %>"
-    <input type="hidden" name="_method" value="PATCH">
-    <label>Car<label>
-        <input type="text" name="name"/>
-        <input type="text" name="make"/>
-    </label>
-    <input type="submit" value="Edit Car"
-</form>
+<form method="POST" action="/cars/<%= @car.id %>">
+        <input type="hidden" name="_method" value="PATCH">
+            <p>Name: <input type="text" name="cars[name]"></p>
+            <p>Year: <input type="text" name="cars[year]"></p>
+            <p>Make: <input type="text" name="cars[make]"></p>
+            <p>Model: <input type="text" name="cars[model]"></p>
+            
+            <p>Color: <input type="text" name="cars[color]"></p>
+            <p>Transmission: <input type="text" name="cars[transmission]"></p>
+            <p>Body Style: <input type="text" name="cars[body_style]"></p>
+        <input type="submit" value="Edit Car">
+    </form>
+
+

@@ -1,27 +1,32 @@
 <h1>Add a New Car Below:</h1>
 
-<form action="/cars" method="POST">
+
+<% if logged_in? %>
+    <form action="/cars" method="POST">
   
-  <p>Year: <input type="text" name="cars[year]"></p>
-  <p>Make: <input type="text" name="cars[make]"></p>
-  <p>Model: <input type="text" name="cars[model]"></p>
-  <p>Color: <input type="text" name="cars[color]"></p>
-  <p>Name (optional): <input type="text" name="cars[name]"></p>
-  <p><label for="transmission">Transmission:</label>
-    <select name="cars[transmission]">
-        <option value="manual">Manual</option>
-        <option value="automatic">Automatic</option>
-    </select></p>
-  <p><label for="body_style">Body Style:</label>
-    <select name="cars[body_style]">
-        <option value="convertible">Convertible</option>
-        <option value="coupe">Coupe</option>
-        <option value="sedan">Sedan</option>
-        <option value="hatchback">Hatchback</option>
-        <option value="wagon">Wagon</option>
-        <option value="suv">SUV</option>
-        <option value="truck">Truck</option>
-        <option value="van">Van</option>
-    </select></p>
-  <input type="submit" value="Add Car">
-</form> 
+        <input type="hidden" name="cars[user_id]" value="<%=current_user.id%>">
+        <p>Year: <input type="text" name="cars[year]"></p>
+        <p>Make: <input type="text" name="cars[make]"></p>
+        <p>Model: <input type="text" name="cars[model]"></p>
+        
+        <p>Color: <input type="text" name="cars[color]"></p>
+        <p>Name (optional): <input type="text" name="cars[name]"></p>
+        <p><label for="transmission">Transmission:</label>
+            <select name="cars[transmission]">
+                <option value="manual">Manual</option>
+                <option value="automatic">Automatic</option>
+            </select></p>
+        <p><label for="body_style">Body Style:</label>
+        <select name="cars[body_style]">
+            <option value="convertible">Convertible</option>
+            <option value="coupe">Coupe</option>
+            <option value="sedan">Sedan</option>
+            <option value="hatchback">Hatchback</option>
+            <option value="wagon">Wagon</option>
+            <option value="suv">SUV</option>
+            <option value="truck">Truck</option>
+            <option value="van">Van</option>
+        </select></p>
+        <input type="submit" value="Add Car">
+    </form> 
+<% end %>

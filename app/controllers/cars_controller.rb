@@ -10,23 +10,33 @@ class CarsController < ApplicationController
   end
 
   post "/cars" do
-    car = Car.create(params[:cars])
-    redirect "/cars"
+    cars = Car.create(params[:cars])
+    redirect "/account"
   end
 
   get "/cars/:id" do
+    @car = Car.find(params[:id])
+
+        # if @car == nil
+        #     redirect to '/cars'
+        # end
     erb :"/cars/show.html"
   end
 
   get "/cars/:id/edit" do
+    @car = Car.find(params[:id])
     erb :"/cars/edit.html"
   end
 
   patch "/cars/:id" do
+    car = Car.find(params[:id])
+    car.update(params[])
     redirect "/cars/:id"
   end
 
-  delete "/cars/:id/delete" do
+  delete "/cars/:id" do
+    car = Car.find(params[:id])
+    car.destroy
     redirect "/cars"
   end
 end

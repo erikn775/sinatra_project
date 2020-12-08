@@ -1,10 +1,9 @@
 <h1>Community Page</h1>
 
 <ul>
+
     <% @cars.each do |car| %>
-        <li><%= car.year %>
-            <%= car.make %>
-            <%= car.model %>
-        </li>
+        <li><a href="/cars/<%=car.id%>"><%=car.year%> <%=car.make%> <%=car.model%></a></li>
+            
     <% end %>
 </ul>

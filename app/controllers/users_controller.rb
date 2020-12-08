@@ -21,7 +21,9 @@ class UsersController < ApplicationController
 
   get '/account' do
     user = User.find(session[:user_id])
-    erb :'/user/account'
+    @user_car = Car.find_by(user_id: current_user)
+    
+    erb :'/users/account'
   end
 
   get '/account/edit' do
@@ -31,7 +33,6 @@ class UsersController < ApplicationController
 
   patch '/account/edit' do
     user = User.find(session[:user.id])
-    binding.pry
     user.update(params[:user])
     redirect '/account'
   end
