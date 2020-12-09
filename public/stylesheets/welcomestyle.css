@@ -1,0 +1,10 @@
+body {
+    background-image: url("https://static.carthrottle.com/workspace/uploads/posts/2015/10/c006c787-2941-47d7-830f-8b6194267590.png");
+  }
+.content {
+    background-color: white;
+    width: 75%;
+    border: 1px black;
+    padding: 100px ;
+    margin: auto;
+}
