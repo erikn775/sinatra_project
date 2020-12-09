@@ -1,16 +1,29 @@
 <h1>Edit <%=@car.make%> <%=@car.model%></h1>
 
-<form method="POST" action="/cars/<%= @car.id %>">
+<form action="/cars/<%=@car.id%>" method="POST">
         <input type="hidden" name="_method" value="PATCH">
-            <p>Name: <input type="text" name="cars[name]"></p>
-            <p>Year: <input type="text" name="cars[year]"></p>
-            <p>Make: <input type="text" name="cars[make]"></p>
-            <p>Model: <input type="text" name="cars[model]"></p>
-            
-            <p>Color: <input type="text" name="cars[color]"></p>
-            <p>Transmission: <input type="text" name="cars[transmission]"></p>
-            <p>Body Style: <input type="text" name="cars[body_style]"></p>
+        <p>Year: <input type="text" name="cars[year]"></p>
+        <p>Make: <input type="text" name="cars[make]"></p>
+        <p>Model: <input type="text" name="cars[model]"></p>
+        
+        <p>Color: <input type="text" name="cars[color]"></p>
+        <p>Name (optional): <input type="text" name="cars[name]"></p>
+        <p><label for="transmission">Transmission:</label>
+            <select name="cars[transmission]">
+                <option value="manual">Manual</option>
+                <option value="automatic">Automatic</option>
+            </select></p>
+        <p><label for="body_style">Body Style:</label>
+        <select name="cars[body_style]">
+            <option value="convertible">Convertible</option>
+            <option value="coupe">Coupe</option>
+            <option value="sedan">Sedan</option>
+            <option value="hatchback">Hatchback</option>
+            <option value="wagon">Wagon</option>
+            <option value="suv">SUV</option>
+            <option value="truck">Truck</option>
+            <option value="van">Van</option>
+        </select></p>
         <input type="submit" value="Edit Car">
-    </form>
-
+    </form> 
 

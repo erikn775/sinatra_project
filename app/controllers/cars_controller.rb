@@ -26,8 +26,8 @@ class CarsController < ApplicationController
 
   patch "/cars/:id" do
     car = Car.find(params[:id])
-    car.update(params[])
-    redirect "/cars/:id"
+    car.update(params[:cars])
+    redirect "/cars/#{car.id}"
   end
 
   delete "/cars/:id" do
