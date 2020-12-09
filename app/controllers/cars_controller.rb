@@ -16,10 +16,6 @@ class CarsController < ApplicationController
 
   get "/cars/:id" do
     @car = Car.find(params[:id])
-
-        # if @car == nil
-        #     redirect to '/cars'
-        # end
     erb :"/cars/show.html"
   end
 

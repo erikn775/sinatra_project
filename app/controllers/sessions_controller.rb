@@ -10,13 +10,13 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect '/account'
     else
-      erb :'sessions/error'
+      erb :'error'
     end
   end 
 
-  # delete '/logout' do
-  #   session.clear
-  #   redirect to '/login'
-  # end
+  get '/logout' do
+    session.clear
+    redirect to '/login'
+  end
 
 end  

@@ -81,6 +81,8 @@
     margin-top: 20px;
     padding-top: 20px;
   }
+
+  
 }
 
 @media screen and (max-width: 600px) {
@@ -112,4 +114,5 @@
     font-size: 18px;
     line-height: 24px;
   }
+  
 }

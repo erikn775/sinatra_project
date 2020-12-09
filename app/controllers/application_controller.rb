@@ -12,13 +12,8 @@ class ApplicationController < Sinatra::Base
   get "/" do
     erb :welcome
   end
-
-  get '/error' do
-    erb :error
-  end
-
+  
   helpers do
-    
     def logged_in?
       !!session[:user_id]
     end

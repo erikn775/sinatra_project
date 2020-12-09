@@ -1,18 +1,20 @@
 
 <h1><%=@car.make%> <%=@car.model%></h1>
 
-<p>Owner: <%=@car.user.name.capitalize %>
-<p><%=@car.year%> <%= @car.make %> <%= @car.model %></p>
+<h3>Owner: <%=@car.user.name.capitalize %></h3>
+
+<h3><%=@car.year%> <%= @car.make %> <%= @car.model %></h3>
 <ul>
-    <li><%= @car.name %></p>
-    <li><%= @car.color %></p>
-    <li><%= @car.body_style %></p>
-    <li><%= @car.transmission %></p>
+    <li>Car Name: <%= @car.name %></p>
+    <li>Color: <%= @car.color %></p>
+    <li>Body Style: <%= @car.body_style %></p>
+    <li>Transmission: <%= @car.transmission %></p>
 </ul>
 
-<% if logged_in? == current_user %>
 
-    <form method="GET" action="/cars/<%=@car.id%>/edit" >
+<% if logged_in? && current_user.id == @car.user_id %>
+
+    <form method="GET" action="/cars/<%=@car.id%>/edit">
     <input type="submit" value="Edit Car">
     </form><br>
 

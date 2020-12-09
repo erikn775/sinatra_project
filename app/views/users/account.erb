@@ -5,9 +5,10 @@
     <h2>Welcome back <%= current_user.name %></h2>
 
     <h3>Car Collection</h3>
+    
 
-    <% if @user_car == nil %>
-        <p> You dont currently have any cars added. Please add a car below</p>
+    <% if @user_car == [] || @user_car == nil %>
+        <p>You dont currently have any cars added. Please add a car below</p>
     <% else %>
         <ul>
             <% @user_car.each do |car| %>
@@ -20,7 +21,7 @@
     <input type="submit" value="Add a Car">
     </form><br>
 
-    <form method="GET" action="/cars/account/edit" >
+    <form method="GET" action="/users/account/edit" >
     <input type="submit" value="Edit Account">
     </form><br>
     
