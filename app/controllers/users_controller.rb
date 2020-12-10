@@ -20,23 +20,5 @@ class UsersController < ApplicationController
     
     erb :'/users/account'
   end
-
-  # get '/account/edit' do
-  #   user = User.find(session[:user_id])
-  #   erb :'users/edit'
-  # end
-
-  # patch '/account/edit' do
-  #   user = User.find(session[:user.id])
-  #   user.update(params[:user])
-  #   redirect '/account'
-  # end
-
-  # delete '/users/:id/delete' do
-  #   user = User.find_by(params[:id])
-  #   user.destroy
-  #   redirect '/users'
-  # end
-
   
 end
