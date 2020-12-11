@@ -12,6 +12,7 @@
 </ul>
 
 
+
 <% if logged_in? && current_user.id == @car.user_id %>
 
     <div>
@@ -22,6 +23,11 @@
     <form method="POST" action="/cars/<%=@car.id%>" >
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete Car">
-    </form>
+    </form><br>
+        <a href="/account"><span class="glyphicon glyphicon-chevron-left"></span> Back to Account</a><br>
+        <a href="/cars"><span class="glyphicon glyphicon-chevron-left"></span> Back to Community Page</a>
     </div>
+    
+<% else %>
+    <a href="/cars"><span class="glyphicon glyphicon-chevron-left"></span> Back</a>
 <% end %>
