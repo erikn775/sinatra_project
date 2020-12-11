@@ -33,6 +33,6 @@ class CarsController < ApplicationController
   delete '/cars/:id' do
     car = Car.find(params[:id])
     car.destroy
-    redirect '/cars'
+    redirect '/account'
   end
 end

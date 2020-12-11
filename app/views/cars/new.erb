@@ -1,16 +1,16 @@
+
 <h1>Add a New Car Below:</h1>
 
 
 <% if logged_in? %>
     <form action="/cars" method="POST">
-  
-        <input type="hidden" name="cars[user_id]" value="<%=current_user.id%>">
-        <p>Year: <input type="text" name="cars[year]"></p>
-        <p>Make: <input type="text" name="cars[make]"></p>
-        <p>Model: <input type="text" name="cars[model]"></p>
         
-        <p>Color: <input type="text" name="cars[color]"></p>
-        <p>Name (optional): <input type="text" name="cars[name]"></p>
+        <input type="hidden" name="cars[user_id]" value="<%=current_user.id%>">
+        <p>Year: <input type="text" name="cars[year]" placeholder="Year"></p>
+        <p>Make: <input type="text" name="cars[make]" placeholder="Make"></p>
+        <p>Model: <input type="text" name="cars[model]" placeholder="Model"></p>
+        <p>Color: <input type="text" name="cars[color]" placeholder="Color"></p>
+        <p>Name (optional): <input type="text" name="cars[name]" placeholder="Car Name"></p>
         <p><label for="transmission">Transmission:</label>
             <select name="cars[transmission]">
                 <option value="manual">Manual</option>
@@ -30,3 +30,4 @@
         <input type="submit" value="Add Car">
     </form> 
 <% end %>
+
