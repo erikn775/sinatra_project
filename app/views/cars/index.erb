@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/compagestyles.css"/>
+</head>
+<body>
+
+
+
+
+
+
+<div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:50px">Community Page </h1>
+    
+  </div>
+</div>
+
+<h2>Community Collection</h2>
+
+<ul>
+
+    <% @cars.each do |car| %>
+        <li><a href="/cars/<%=car.id%>"><%=car.year%> <%=car.make%> <%=car.model%></a></li>
+            
+    <% end %>
+</ul>

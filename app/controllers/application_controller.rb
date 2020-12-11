@@ -9,10 +9,10 @@ class ApplicationController < Sinatra::Base
     set :session_secret, 'super_secret_string'
   end
 
-  get "/" do
+  get '/' do
     erb :welcome
   end
-  
+
   helpers do
     def logged_in?
       !!session[:user_id]
