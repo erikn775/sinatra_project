@@ -10,14 +10,17 @@ class CarsController < ApplicationController
   end
 
   post '/cars' do
-    #make sure someone is logged in
-    #make sure car created is valid
-    cars = Car.create(params[:cars])
-    redirect '/account'
+    car = Car.new(params[:cars])
+    if logged_in? && current_user.id == car.user_id && car.valid?
+      car.save
+      redirect '/account'
+    else
+      @error = car.errors.full_messages.join(" - ")
+      erb :'/cars/new'
+    end
   end
 
   get '/cars/:id' do 
-    
     @car = Car.find(params[:id])
     erb :'/cars/show'
   end

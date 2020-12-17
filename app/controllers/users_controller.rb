@@ -15,10 +15,14 @@ class UsersController < ApplicationController
   end
 
   get '/account' do
-    @user = User.find(session[:user_id])
-    @user_car = Car.where(user_id: current_user)
+    if logged_in?
+      @user = User.find(session[:user_id])
+      @user_car = Car.where(user_id: current_user)
     
-    erb :'/users/account'
+      erb :'/users/account'
+    else
+      erb:'error'
+    end
   end
   
 end

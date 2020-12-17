@@ -1,8 +1,8 @@
 
 <h1>Add a New Car Below:</h1>
 
+<%= @error %>
 
-<% if logged_in? %>
     <form action="/cars" method="POST">
         
         <input type="hidden" name="cars[user_id]" value="<%=current_user.id%>">
@@ -29,5 +29,5 @@
         </select></p>
         <input type="submit" value="Add Car">
     </form> 
-<% end %>
+
 
