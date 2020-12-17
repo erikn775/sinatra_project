@@ -1,6 +1,6 @@
-<h1>Edit <%=@car.make%> <%=@car.model%></h1>
+<h1>Edit <%=@car_edit.make%> <%=@car_edit.model%></h1>
 
-<form action="/cars/<%=@car.id%>" method="POST">
+<form action="/cars/<%=@car_edit.id%>" method="POST">
         <input type="hidden" name="_method" value="PATCH">
         <p>Year: <input type="text" name="cars[year]"></p>
         <p>Make: <input type="text" name="cars[make]"></p>

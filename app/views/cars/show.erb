@@ -11,12 +11,7 @@
     <li>Transmission: <%= @car.transmission %></p>
 </ul>
 
-
-
-<% if logged_in? && current_user.id == @car.user_id %>
-
-    <div>
-    <form method="GET" action="/cars/<%=@car.id%>/edit">
+<form method="GET" action="/cars/<%=@car.id%>/edit">
     <input type="submit" value="Edit Car">
     </form><br>
 
@@ -24,10 +19,12 @@
     <input type="hidden" name="_method" value="DELETE">
     <input type="submit" value="Delete Car">
     </form><br>
+
+<% if logged_in? && current_user.id == @car.user_id %>
+    <div>
         <a href="/account"><span class="glyphicon glyphicon-chevron-left"></span> Back to Account</a><br>
         <a href="/cars"><span class="glyphicon glyphicon-chevron-left"></span> Back to Community Page</a>
     </div>
-    
 <% else %>
     <a href="/cars"><span class="glyphicon glyphicon-chevron-left"></span> Back</a>
 <% end %>
