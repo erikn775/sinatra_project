@@ -10,7 +10,8 @@ class UsersController < ApplicationController
         session[:user_id] = user.id
         redirect '/account'
       else
-        erb :'error'
+        @error = user.errors.full_messages.join(" - ")
+        erb :'/users/signup'
       end
   end
 

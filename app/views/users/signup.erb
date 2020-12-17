@@ -13,17 +13,19 @@
   <form action="/signup" method="POST" class="container">
     <h1>Sign up</h1>
 
+    <%= @error %><br>
+    
     <label for="name"><b>Name</b></label>
-    <input type="text" name="user[name]" placeholder="Enter Name" required>
+    <input type="text" name="user[name]" placeholder="Enter Name">
 
     <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="user[username]" required>
+    <input type="text" placeholder="Enter Username" name="user[username]">
 
     <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="user[email]" required>
+    <input type="text" placeholder="Enter Email" name="user[email]">
 
     <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="user[password]" required>
+    <input type="password" placeholder="Enter Password" name="user[password]">
 
     <button type="submit" class="btn">Sign Up</button>
   </form>
