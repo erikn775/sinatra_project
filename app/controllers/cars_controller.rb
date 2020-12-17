@@ -6,7 +6,11 @@ class CarsController < ApplicationController
   end
 
   get '/cars/new' do
-    erb :'/cars/new'
+    if logged_in?
+      erb :'/cars/new'
+    else
+      erb:'error'
+    end
   end
 
   post '/cars' do

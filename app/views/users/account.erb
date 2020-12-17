@@ -21,15 +21,12 @@
 
     <h3>Car Collection</h3>
     
-    <% if @user_car == [] || @user_car == nil %>
-        <p>You dont currently have any cars added. Please add a car below</p>
-    <% else %>
         <ul>
             <% @user_car.each do |car| %>
                 <li><a href="/cars/<%=car.id%>"><%=car.year%> <%=car.make%> <%=car.model%></a></li>
             <% end %>   
         </ul>
-    <% end %>
+    
     
     <form method="GET" action="/cars/new" >
     <input type="submit" value="Add a Car">

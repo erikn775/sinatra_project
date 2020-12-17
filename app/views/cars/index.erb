@@ -6,11 +6,6 @@
 </head>
 <body>
 
-
-
-
-
-
 <div class="hero-image">
   <div class="hero-text">
     <h1 style="font-size:50px">Community Page </h1>
@@ -21,9 +16,7 @@
 <h2>Community Collection</h2>
 
 <ul>
-
     <% @cars.each do |car| %>
-        <li><a href="/cars/<%=car.id%>"><%=car.year%> <%=car.make%> <%=car.model%></a></li>
-            
+        <li><a href="/cars/<%=car.id%>"><%=car.year%> <%=car.make.capitalize%> <%=car.model.capitalize%></a></li>
     <% end %>
 </ul>
