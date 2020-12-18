@@ -15,12 +15,15 @@ class CarsController < ApplicationController
 
   post '/cars' do
     car = Car.new(params[:cars])
-    if logged_in? && current_user.id == car.user_id && car.valid?
-      car.save
-      redirect '/account'
+    if logged_in? && current_user.id == car.user_id 
+      if car.save
+        redirect '/account'
+      else
+        @error = car.errors.full_messages.join(" - ")
+        erb :'/cars/new'
+      end
     else
-      @error = car.errors.full_messages.join(" - ")
-      erb :'/cars/new'
+      erb:'error'
     end
   end
 

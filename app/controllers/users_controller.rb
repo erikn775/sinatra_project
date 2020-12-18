@@ -5,15 +5,14 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-      user = User.new(params[:user])
-      if user.valid?
-        user.save
-        session[:user_id] = user.id
-        redirect '/account'
-      else
-        @error = user.errors.full_messages.join(" - ")
-        erb :'/users/signup'
-      end
+    user = User.new(params[:user])
+    if user.save
+      session[:user_id] = user.id
+      redirect '/account'
+    else
+      @error = user.errors.full_messages.join(" - ")
+      erb :'/users/signup'
+    end
   end
 
   get '/account' do
