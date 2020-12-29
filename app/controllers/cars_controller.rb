@@ -14,8 +14,8 @@ class CarsController < ApplicationController
   end
 
   post '/cars' do
-    car = Car.new(params[:cars])
-    if logged_in? && current_user.id == car.user_id 
+    if logged_in? 
+      car = current_user.cars.new(params[:cars])
       if car.save
         redirect '/account'
       else
